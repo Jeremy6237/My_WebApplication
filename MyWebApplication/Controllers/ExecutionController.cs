@@ -30,7 +30,7 @@ namespace MyWebApplication.Controllers
             {
                 using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
                 {
-                    var result = await connection.ExecuteAsync("usp_CreateMyoffice_ACPD", new { JsonData = jsonData.ToString() }, commandType: CommandType.StoredProcedure);
+                    var result = await connection.ExecuteAsync("../Scripts/usp_CreateMyoffice_ACPD", new { JsonData = jsonData.ToString() }, commandType: CommandType.StoredProcedure);
                     return Ok(result);
                 }
             }
@@ -40,7 +40,7 @@ namespace MyWebApplication.Controllers
             {
                 using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
                 {
-                    var result = await connection.QueryAsync("usp_ReadMyoffice_ACPD", commandType: CommandType.StoredProcedure);
+                    var result = await connection.QueryAsync("../Scripts/usp_ReadMyoffice_ACPD", commandType: CommandType.StoredProcedure);
                     return Ok(result);
                 }
             }
@@ -50,7 +50,7 @@ namespace MyWebApplication.Controllers
             {
                 using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
                 {
-                    var result = await connection.ExecuteAsync("usp_UpdateMyoffice_ACPD", new { JsonData = jsonData.ToString() }, commandType: CommandType.StoredProcedure);
+                    var result = await connection.ExecuteAsync("../Scripts/usp_UpdateMyoffice_ACPD", new { JsonData = jsonData.ToString() }, commandType: CommandType.StoredProcedure);
                     return Ok(result);
                 }
             }
@@ -60,7 +60,7 @@ namespace MyWebApplication.Controllers
             {
                 using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
                 {
-                    var result = await connection.ExecuteAsync("usp_DeleteMyoffice_ACPD", new { JsonData = jsonData.ToString() }, commandType: CommandType.StoredProcedure);
+                    var result = await connection.ExecuteAsync("../Scripts/usp_DeleteMyoffice_ACPD", new { JsonData = jsonData.ToString() }, commandType: CommandType.StoredProcedure);
                     return Ok(result);
                 }
             }
